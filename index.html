@@ -1,90 +1,222 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Project 01</title>
-    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Ceviche+One|Special+Elite|Tauri" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>North Hollywood Church</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <!-- <script src="main.js"></script> -->
 
-    <!--Google Sign-in-->
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-client_id" content="818275019442-i677ngdm3h9clssjl5jn0a5se2646rjm.apps.googleusercontent.com">
-    
+     <!-- Link to Bootstrap-->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+     <!-- Link to css file -->
+     <link rel = "stylesheet" type = "text/css" href = "assets/css/style.css">
+
+     <link rel = "stylesheet" type = "text/css" href = "assets/css/youtube.css">
+
+     <link rel = "stylesheet" type = "text/css" href = "assets/css/googlemaps.css">
+     <link rel = "stylesheet" type = "text/css" href = "assets/css/facebook.css">
+
+     <!-- Link to Google Fonts -->
+     <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet">
+
+     <!-- Link to Firebase -->
+     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+
 </head>
+
+
+<!-- <body class = "bg"> -->
 <body>
-    <!--Facebook Login-->
-    <!-- <div id="fb-root"></div> -->
-    <!-- <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&appId=497229994007275&autoLogAppEvents=1';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
-    
-    <div id="status"></div> -->
 
-    
-    <!--End Facebook Login-->
-    <div class="container">
-            <!--Google sign-in-->
-            <div class="jumbotron text-center"><h1>User Authentication</h1></div>
-            <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
-            <div class="row">
-                    <button id="googleBtn" class="major-provider btn _block _medium _google">Google</button>
-                    
-                    
 
-                    
-                    <div class="fb-login-button" data-max-rows="1" data-size="large"  data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
-            </div>
-           
+    <!-- <div class = "row space"></div> -->
+    <div class = "row space"></div>
 
-            <!-- <div class="g-signin2"></div> -->
-            <!--End Google sign-in-->
+
+    <!-- TODO: Add APIs and Links to all of the items below. -->
+
+    <div class = "container">
+
+        <div class = "row space"></div>
+
+
+        <div class = "jumbotron bg-blue text-center color-white text-roboto header">
+            <h1 class = "display-3" style = "font-weight: bold">North Hollywood Church</h1>
+            <p class = "lead">9936 Beachy Ave, Arleta, CA 91331</p>
+            <hr class = "my-4">
+        </div>
+
+        <div class = "row">
+            <section class = "col-8">
+                <!-- <img src = "assets/images/placeholder.jpg" class = "img-fluid img-sizer" alt = "image" id = "church-image"> -->
+                <img src = "assets/images/church.jpg" class = "img-fluid img-sizer" alt = "image" id = "church-image">
+            </section>
+
+            <section class = "col-1"></section>
+
+            <section class = "col-3 d-flex flex-column justify-content-around text-robCondensed">
+                <!-- <div class = "rounded-circle bg-lightblue color-white circle-sizer-2" id = "bible-search">Bible Search</div>
+                <div class = "rounded-circle bg-lightblue color-white circle-sizer" id = "reg-schedule">Regular Schedule</div>
+                <div class = "rounded-circle bg-lightblue color-white circle-sizer" id = "peers">Peers</div> -->
+                <div id = "google-icon googleBtn" class="major-provider btn _block _medium _google">
+                    <a href = "#">
+                        <img src = "assets/images/google-icon.png" class = "icon-sizer">
+                    </a>
+                </div>
+
+                <div id = "facebook-icon">
+                    <img src = "assets/images/fb-icon.png" class = "icon-sizer">
+                </div>
+
+                <div id = "login-icon">
+                    <img src = "assets/images/login-icon.jpg" class = "icon-sizer">
+                </div>
+
+            </section>
+        </div>
+
+        <div class = "row space"></div>
+        <div class = "row space"></div>
+
+        <div class = "row">
+            <!-- <section class = "col-6">
+                <div class = "placeholder" id = "facebook-posts">Facebook Posts Will Go Here</div>
+            </section>
+
+            <section class = "col-6">
+                <div class = "placeholder" id = "facebook-events">Facebook Events Will Go Here</div>
+            </section> -->
+
+            <section class = "col-12 pre-scrollable" id = "post-holder">
+                <!-- <div id="showPage">
+                    <div id="showPost"></div>
+                </div>    -->
+                <div id="showPost"></div>
+            </section>
+        </div>
+
+        <div class = "row space"></div>
+        <div class = "row space"></div>
+        <div class = "row space"></div>
+
+        <div class = "row align-items-center">
+            <!-- <section class = "col-12">
+                <div class = "placeholder" id = "youtube">Youtube Content Will Go Here</div>
+            </section> -->
+
+            <section class = "col-lg-7" id = "vid-display"></section>
             
+            <section class = "col-lg-1 space"></section>
+
+            <section class = "col-lg-4">
+
+                <button type = "button" class = "btn btn-primary" id = "vid-load">Load More Videos</button>
+                <section id = "load-message"></section>
+
+                <section class = "space"></section>
+
+                <section class = "d-flex flex-column pre-scrollable" id = "videos">
+                    <section class = "space"></section>
+                </section>
+
+            </section>
+
             
 
-            <!-- Login with username and password -->
-            <div class="mt-3">
-                <label for="username">User Name: </label>
-                <input type="text" id="username" >
+
+        </div>
+
+        <div class = "row space"></div>
+        <div class = "row space"></div>
+
+        <div class = "row">
+            <!-- <section class = "col-6">
+                <div class = "placeholder" id = "directions">Directions</div>
+            </section>
+
+            <section class = "col-6">
+                <div class = "placeholder" id = "contacts">Contacts</div>
+            </section> -->
+
+
+            <div class = "col-md-6">
+
+                <input id="start" class="controls" type="text" placeholder="Enter Your Start Address" onFocus="geolocate()">
+        
+                <select id="mode" class="controls">
+                    <option value="DRIVING">Select Travel Option</option>
+                    <option value="DRIVING">Driving</option>
+                    <option value="WALKING">Walking</option>
+                    <option value="BICYCLING">Bicycling</option>
+                    <option value="TRANSIT">Transit</option>
+                </select>
+                
+                <button id="detailsBtn" class="btn btn-secondary">Details</button>
+
             </div>
-            <div>
-                    <label for="password">Password: </label>
-                <input type="password" id="password"> 
+            
+        </div>
+
+        <div class = "row">
+            <div class = "col-md-6">
+                <!--map-->
+                <div id = "mapHolder">
+                    <div id="map"></div>
+                </div>
             </div>
-            <div>
-                <input type="button" id="login" class="btn btn-action" value="Log In">
-                <input type="button" id="SignUp" class="btn btn-secondary" value="Sign Up">
-                <input type="button" id="LogOut"  class="btn btn-action hide"  value="Log Out">
+
+            <div class = "col-md-6">
+                <!--detail direction panel-->
+                <div id = "instructionHolder">
+                    <div id="bottom-panel" class = "pre-scrollable"></div>
+                </div>
             </div>
-            <!-- End Login with username and password -->
+        </div>
+
+        
+
+        <div class = "row space"></div>
+        <div class = "row space"></div>
+        <!-- <div class = "row space"></div>
+        <div class = "row space"></div> -->
 
 
-
-
-            <div class="showUserName mt-3"></div>
     </div>
 
-
-
-
-
     
 
 
-        <script src="assets/javascript/g-apps.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+
+
+    <!-- Link to jQuery -->
+    <script type = "text/javascript" src = "https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
+    <!-- Link to Google Maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlvNNu33wLTWD5g2DwWs61iWawPsb5fPM&libraries=places&callback=init"
+    async defer></script>
+
+
+    <!-- Link to JavaScript -->
+    <!-- <script type = "text/javascript" src = "assets/javascript/app.js"></script> -->
+
+
+    <!-- Link to youtube.js -->
+    <script type = "text/javascript" src = "assets/javascript/youtube.js"></script>
+
+
+    <!-- Link to googlemaps.js -->
+    <script type = "text/javascript" src = "assets/javascript/googlemaps.js"></script>
+
+    <!-- Link to facebook.js -->
+    <script type = "text/javascript" src = "assets/javascript/facebook.js"></script>
+
+    <!-- Link to Google Authentication -->
+    <script src="assets/javascript/googleAuth.js"></script>
+
+
 </body>
 </html>
