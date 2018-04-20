@@ -198,26 +198,26 @@ function testAPI() {
 
 
 //Login with username and password
-const txtEmail=document.getElementById("username");
-const txtPass=document.getElementById("password");
-const btnLogin=document.getElementById("login");
-const btnSignUp=document.getElementById("SignUp");
-const btnLogOut=document.getElementById("LogOut");
-btnLogin.addEventListener("click", e => {
-  const email = txtEmail.value;
-  const pass = txtPass.value;
-  const promise = firebase.auth().signInWithEmailAndPassword(email,pass);
-  promise.catch(e=> console.log(e.message));
-});
-btnSignUp.addEventListener("click",e =>{
-  const email = txtEmail.value;
-  const pass = txtPass.value;
-  const promise = firebase.auth().createUserWithEmailAndPassword(email,pass);
-  promise.catch(e=> console.log(e.message));
-});
-btnLogOut.addEventListener("click", e=>{
-    firebase.auth().signOut();
-});
+// const txtEmail=document.getElementById("username");
+// const txtPass=document.getElementById("password");
+// const btnLogin=document.getElementById("login");
+// const btnSignUp=document.getElementById("SignUp");
+// const btnLogOut=document.getElementById("LogOut");
+// btnLogin.addEventListener("click", e => {
+//   const email = txtEmail.value;
+//   const pass = txtPass.value;
+//   const promise = firebase.auth().signInWithEmailAndPassword(email,pass);
+//   promise.catch(e=> console.log(e.message));
+// });
+// btnSignUp.addEventListener("click",e =>{
+//   const email = txtEmail.value;
+//   const pass = txtPass.value;
+//   const promise = firebase.auth().createUserWithEmailAndPassword(email,pass);
+//   promise.catch(e=> console.log(e.message));
+// });
+// btnLogOut.addEventListener("click", e=>{
+//     firebase.auth().signOut();
+// });
 firebase.auth().onAuthStateChanged(firebaseUser =>{
   if(firebaseUser){
       console.log(firebaseUser);
