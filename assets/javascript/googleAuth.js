@@ -221,11 +221,11 @@ function testAPI() {
 firebase.auth().onAuthStateChanged(firebaseUser =>{
   if(firebaseUser){
       console.log(firebaseUser);
-      btnLogOut.classList.remove("hide");
+      // btnLogOut.classList.remove("hide");
   }
   else{
       console.log("not logged in ");
-      btnLogOut.classList.add("hide");
+      // btnLogOut.classList.add("hide");
   }
 });
 //End of Login with username and password
